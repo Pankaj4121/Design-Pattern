@@ -1,4 +1,4 @@
-package com.DesignPattern.Design.Pattern;
+package com.DesignPattern.Design.Pattern.Singleton;
 
 public class SingletonDbConnection {
     /* Lazy Loading - Create Object when this class called
