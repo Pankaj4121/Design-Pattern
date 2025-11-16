@@ -3,6 +3,7 @@ package com.DesignPattern.Design.Pattern;
 import com.DesignPattern.Design.Pattern.AbstractFactory.BikeFactory;
 import com.DesignPattern.Design.Pattern.AbstractFactory.Vehicle;
 import com.DesignPattern.Design.Pattern.AbstractFactory.VehicleAbstractFactory;
+import com.DesignPattern.Design.Pattern.BuilderDesign.Showroom;
 import com.DesignPattern.Design.Pattern.FactoryDesign.Car;
 import com.DesignPattern.Design.Pattern.FactoryDesign.CarFactory;
 import com.DesignPattern.Design.Pattern.Singleton.SingletonDbConnection;
@@ -16,6 +17,8 @@ public class DesignPatternApplication {
 		SpringApplication.run(DesignPatternApplication.class, args);
 
 		//Singleton DB Connection
+		System.out.println("Singleton Design Pattern");
+
 		SingletonDbConnection db1 = SingletonDbConnection.getInstance();
 		SingletonDbConnection db2 = SingletonDbConnection.getInstance();
 
@@ -23,7 +26,10 @@ public class DesignPatternApplication {
 		System.out.println(db2);
 		System.out.println(db1 == db2);
 
+		System.out.println("");
+
 		//Factory Design Pattern
+		System.out.println("Factory Design Pattern");
 
 		Car car1 = CarFactory.getCar("Porche");
 		car1.collection();
@@ -34,7 +40,10 @@ public class DesignPatternApplication {
 		Car car3 = CarFactory.getCar("Lambo");
 		car3.collection();
 
+		System.out.println("");
+
 		//Abstract Factory Pattern
+		System.out.println("Abstract Factory Pattern");
 		VehicleAbstractFactory carFactory = new com.DesignPattern.Design.Pattern.AbstractFactory.CarFactory();
 		Vehicle car = carFactory.createVehicle();
 		car.Own();
@@ -42,6 +51,30 @@ public class DesignPatternApplication {
 		VehicleAbstractFactory bikeFactory = new BikeFactory();
 		Vehicle bike = bikeFactory.createVehicle();
 		bike.Own();
+
+		System.out.println("");
+
+
+		//Builder Design Pattern
+		System.out.println("Builder Design Pattern");
+		Showroom myColletion = new Showroom.Builder()
+				.setCar("BMW")
+				.setBike("Harley")
+				.setScooty("Activa")
+				.setXUV("GWAGON")
+				.build();
+		myColletion.Show();
+
+		Showroom myColletion2 = new Showroom.Builder()
+				.setCar("Porche")
+				.setBike("Aprilla")
+				.setXUV("XUV7OO")
+				.build();
+		myColletion2.Show();
+
+		System.out.println("");
+
+
 	}
 
 }
