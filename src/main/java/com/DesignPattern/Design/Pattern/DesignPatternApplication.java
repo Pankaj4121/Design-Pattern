@@ -6,6 +6,8 @@ import com.DesignPattern.Design.Pattern.AbstractFactory.VehicleAbstractFactory;
 import com.DesignPattern.Design.Pattern.BuilderDesign.Showroom;
 import com.DesignPattern.Design.Pattern.FactoryDesign.Car;
 import com.DesignPattern.Design.Pattern.FactoryDesign.CarFactory;
+import com.DesignPattern.Design.Pattern.IteratorDesign.Iterator;
+import com.DesignPattern.Design.Pattern.IteratorDesign.OfferLetter;
 import com.DesignPattern.Design.Pattern.ProtoTypeDesign.Company;
 import com.DesignPattern.Design.Pattern.Singleton.SingletonDbConnection;
 import org.springframework.boot.SpringApplication;
@@ -85,6 +87,15 @@ public class DesignPatternApplication {
 		company2.show();
 
 		System.out.println("");
+
+		//Iterator Design Pattern
+		System.out.println("Iterator Design Pattern");
+		OfferLetter offerLetter = new OfferLetter();
+		Iterator it = offerLetter.getIterator();
+
+		while(it.hasNext()){
+			System.out.println(it.next());
+		}
 
 	}
 
