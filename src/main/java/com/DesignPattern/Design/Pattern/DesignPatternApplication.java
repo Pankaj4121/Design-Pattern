@@ -1,5 +1,8 @@
 package com.DesignPattern.Design.Pattern;
 
+import com.DesignPattern.Design.Pattern.AbstractFactory.BikeFactory;
+import com.DesignPattern.Design.Pattern.AbstractFactory.Vehicle;
+import com.DesignPattern.Design.Pattern.AbstractFactory.VehicleAbstractFactory;
 import com.DesignPattern.Design.Pattern.FactoryDesign.Car;
 import com.DesignPattern.Design.Pattern.FactoryDesign.CarFactory;
 import com.DesignPattern.Design.Pattern.Singleton.SingletonDbConnection;
@@ -30,6 +33,15 @@ public class DesignPatternApplication {
 
 		Car car3 = CarFactory.getCar("Lambo");
 		car3.collection();
+
+		//Abstract Factory Pattern
+		VehicleAbstractFactory carFactory = new com.DesignPattern.Design.Pattern.AbstractFactory.CarFactory();
+		Vehicle car = carFactory.createVehicle();
+		car.Own();
+
+		VehicleAbstractFactory bikeFactory = new BikeFactory();
+		Vehicle bike = bikeFactory.createVehicle();
+		bike.Own();
 	}
 
 }
