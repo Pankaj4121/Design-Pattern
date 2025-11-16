@@ -6,6 +6,7 @@ import com.DesignPattern.Design.Pattern.AbstractFactory.VehicleAbstractFactory;
 import com.DesignPattern.Design.Pattern.BuilderDesign.Showroom;
 import com.DesignPattern.Design.Pattern.FactoryDesign.Car;
 import com.DesignPattern.Design.Pattern.FactoryDesign.CarFactory;
+import com.DesignPattern.Design.Pattern.ProtoTypeDesign.Company;
 import com.DesignPattern.Design.Pattern.Singleton.SingletonDbConnection;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -74,6 +75,16 @@ public class DesignPatternApplication {
 
 		System.out.println("");
 
+		//Prototype Design Pattern
+		System.out.println("Prototype Design Pattern");
+		Company company1 = new Company("IT", "Google", "50LPA");
+		company1.show();
+
+		Company company2 = (Company) company1.clone();
+		company2.setName("Amazon");
+		company2.show();
+
+		System.out.println("");
 
 	}
 
